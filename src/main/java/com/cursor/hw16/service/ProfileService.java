@@ -31,10 +31,6 @@ public class ProfileService extends DbUtil implements Model {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
         }
     }
 
@@ -63,10 +59,6 @@ public class ProfileService extends DbUtil implements Model {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
         }
         return modelList;
     }
@@ -101,9 +93,6 @@ public class ProfileService extends DbUtil implements Model {
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
-            if (connection != null) {
-                connection.close();
-            }
         }
         return profile;
     }
@@ -128,10 +117,6 @@ public class ProfileService extends DbUtil implements Model {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
         }
     }
 
@@ -148,10 +133,6 @@ public class ProfileService extends DbUtil implements Model {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
         }
     }
 }
