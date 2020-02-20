@@ -2,6 +2,7 @@ package com.cursor.hw16.controller;
 
 import com.cursor.hw16.entity.Account;
 import com.cursor.hw16.entity.Profile;
+import com.cursor.hw16.model.Model;
 import com.cursor.hw16.service.AccountService;
 import com.cursor.hw16.service.ProfileService;
 
@@ -50,10 +51,10 @@ public class AppExecutor {
 
     private void showAllAccounts() throws SQLException {
 
-        List<Account> accountList = accountService.getAll();
+        List<Model> modelList = accountService.getAll();
 
-        for (Account account : accountList) {
-            System.out.println(account);
+        for (Model model : modelList) {
+            System.out.println(model);
         }
     }
 
@@ -93,10 +94,10 @@ public class AppExecutor {
 
     private void showAllProfiles() throws SQLException {
 
-        List<Profile> profileList = profileService.getAll();
+        List<Model> modelList = profileService.getAll();
 
-        for (Profile profile : profileList) {
-            System.out.println(profile);
+        for (Model model : modelList) {
+            System.out.println(model);
         }
     }
 

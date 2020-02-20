@@ -1,19 +1,20 @@
 package com.cursor.hw16.service;
 
-import com.cursor.hw16.dao.AccountDAO;
 import com.cursor.hw16.entity.Account;
+import com.cursor.hw16.model.Model;
 import com.cursor.hw16.util.DbUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountService extends DbUtil implements AccountDAO {
+public class AccountService extends DbUtil implements Model {
 
     private Connection connection = getConnection();
 
     @Override
-    public void insert(Account account) throws SQLException {
+    public void insert(Model model) throws SQLException {
+        Account account = new Account();
 
         String sql = "INSERT INTO accounts (id, first_name, last_name, city, gender, username) VALUES (?, ?, ?, ?, ?, ?) ";
 
@@ -38,9 +39,9 @@ public class AccountService extends DbUtil implements AccountDAO {
     }
 
     @Override
-    public List<Account> getAll() throws SQLException {
+    public List<Model> getAll() throws SQLException {
 
-        List<Account> accountList = new ArrayList<>();
+        List<Model> modelList = new ArrayList<>();
 
         String sql = "SELECT * FROM accounts";
 
@@ -58,7 +59,7 @@ public class AccountService extends DbUtil implements AccountDAO {
                 account.setGender(resultSet.getString("gender"));
                 account.setUsername(resultSet.getString("username"));
 
-                accountList.add(account);
+                modelList.add(account);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,11 +68,11 @@ public class AccountService extends DbUtil implements AccountDAO {
                 connection.close();
             }
         }
-        return accountList;
+        return modelList;
     }
 
     @Override
-    public Account getById(int id) throws SQLException {
+    public Model getById(int id) throws SQLException {
 
         PreparedStatement preparedStatement = null;
 
@@ -107,7 +108,9 @@ public class AccountService extends DbUtil implements AccountDAO {
     }
 
     @Override
-    public void update(Account account) throws SQLException {
+    public void update(Model model) throws SQLException {
+
+        Account account = new Account();
 
         String sql = "UPDATE accounts SET first_name=?, last_name=?, city=?, gender=?, username=? WHERE id=?";
 

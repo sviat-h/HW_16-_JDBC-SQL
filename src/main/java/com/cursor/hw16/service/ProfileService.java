@@ -1,19 +1,20 @@
 package com.cursor.hw16.service;
 
-import com.cursor.hw16.dao.ProfileDAO;
 import com.cursor.hw16.entity.Profile;
+import com.cursor.hw16.model.Model;
 import com.cursor.hw16.util.DbUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileService extends DbUtil implements ProfileDAO {
+public class ProfileService extends DbUtil implements Model {
 
     private Connection connection = getConnection();
 
     @Override
-    public void insert(Profile profile) throws SQLException {
+    public void insert(Model model) throws SQLException {
+        Profile profile = new Profile();
 
         String sql = "INSERT INTO profiles (id, username, job_title, department, company, skill) VALUES (?, ?, ?, ?, ?, ?) ";
 
@@ -38,9 +39,9 @@ public class ProfileService extends DbUtil implements ProfileDAO {
     }
 
     @Override
-    public List<Profile> getAll() throws SQLException {
+    public List<Model> getAll() throws SQLException {
 
-        List<Profile> profileList = new ArrayList<>();
+        List<Model> modelList = new ArrayList<>();
 
         String sql = "SELECT * FROM profiles";
 
@@ -58,7 +59,7 @@ public class ProfileService extends DbUtil implements ProfileDAO {
                 profile.setCompany(resultSet.getString("company"));
                 profile.setSkill(resultSet.getString("skill"));
 
-                profileList.add(profile);
+                modelList.add(profile);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,7 +68,7 @@ public class ProfileService extends DbUtil implements ProfileDAO {
                 connection.close();
             }
         }
-        return profileList;
+        return modelList;
     }
 
     @Override
@@ -108,7 +109,9 @@ public class ProfileService extends DbUtil implements ProfileDAO {
     }
 
     @Override
-    public void update(Profile profile) throws SQLException {
+    public void update(Model model) throws SQLException {
+
+        Profile profile = new Profile();
 
         String sql = "UPDATE profiles SET username=?, job_title=?, department=?, company=?, skill=? WHERE id=?";
 

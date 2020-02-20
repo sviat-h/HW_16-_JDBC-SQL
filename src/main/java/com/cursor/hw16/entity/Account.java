@@ -1,5 +1,6 @@
 package com.cursor.hw16.entity;
 
+import com.cursor.hw16.model.Model;
 import lombok.*;
 
 @Getter
@@ -9,7 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 
-public class Account {
+public class Account implements Model {
 
     private int id;
     private String first_name;
