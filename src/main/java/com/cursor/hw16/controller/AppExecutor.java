@@ -37,7 +37,7 @@ public class AppExecutor {
         }
     }
 
-    private void addAccountToTable(int id, String firstName, String lastName, String city, String gender, String username) throws SQLException {
+    private void addAccountToTable(int id, String firstName, String lastName, String city, String gender, String username) {
 
         account.setId(id);
         account.setFirstName(firstName);
@@ -49,7 +49,7 @@ public class AppExecutor {
         accountService.insert(account);
     }
 
-    private void showAllAccounts() throws SQLException {
+    private void showAllAccounts() {
 
         List<Model> modelList = accountService.getAll();
 
@@ -62,7 +62,7 @@ public class AppExecutor {
         System.out.println(accountService.getById(id));
     }
 
-    private void updateAccount(int id, String firstName, String lastName, String city, String gender, String username) throws SQLException {
+    private void updateAccount(int id, String firstName, String lastName, String city, String gender, String username) {
         Account account = new Account();
 
         account.setId(id);
@@ -75,12 +75,12 @@ public class AppExecutor {
         accountService.update(account);
     }
 
-    private void deleteAccountById(int id) throws SQLException {
+    private void deleteAccountById(int id) {
         accountService.delete(id);
     }
 
 
-    private void addProfileToTable(int id, String username, String jobTitle, String department, String company, String skill) throws SQLException {
+    private void addProfileToTable(int id, String username, String jobTitle, String department, String company, String skill) {
 
         profile.setId(id);
         profile.setUsername(username);
@@ -92,7 +92,7 @@ public class AppExecutor {
         profileService.insert(profile);
     }
 
-    private void showAllProfiles() throws SQLException {
+    private void showAllProfiles() {
 
         List<Model> modelList = profileService.getAll();
 
@@ -105,7 +105,7 @@ public class AppExecutor {
         System.out.println(profileService.getById(id));
     }
 
-    private void updateProfile(int id, String username, String jobTitle, String department, String company, String skill) throws SQLException {
+    private void updateProfile(int id, String username, String jobTitle, String department, String company, String skill) {
         Account account = new Account();
 
         profile.setId(id);
@@ -118,7 +118,7 @@ public class AppExecutor {
         profileService.update(profile);
     }
 
-    private void deleteProfileById(int id) throws SQLException {
+    private void deleteProfileById(int id) {
         profileService.delete(id);
     }
 }

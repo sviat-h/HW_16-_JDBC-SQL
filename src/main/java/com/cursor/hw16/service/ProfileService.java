@@ -13,7 +13,7 @@ public class ProfileService extends DbUtil implements Model {
     private Connection connection = getConnection();
 
     @Override
-    public void insert(Model model) throws SQLException {
+    public void insert(Model model) {
         Profile profile = new Profile();
 
         String sql = "INSERT INTO profiles (id, username, job_title, department, company, skill) VALUES (?, ?, ?, ?, ?, ?) ";
@@ -35,7 +35,7 @@ public class ProfileService extends DbUtil implements Model {
     }
 
     @Override
-    public List<Model> getAll() throws SQLException {
+    public List<Model> getAll() {
 
         List<Model> modelList = new ArrayList<>();
 
@@ -98,7 +98,7 @@ public class ProfileService extends DbUtil implements Model {
     }
 
     @Override
-    public void update(Model model) throws SQLException {
+    public void update(Model model) {
 
         Profile profile = new Profile();
 
@@ -121,7 +121,7 @@ public class ProfileService extends DbUtil implements Model {
     }
 
     @Override
-    public void delete(int id) throws SQLException {
+    public void delete(int id) {
 
         String sql = "DELETE FROM profiles WHERE id=?";
 

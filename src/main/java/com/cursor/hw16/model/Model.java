@@ -4,10 +4,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface Model {
-    default void insert(Model model) throws SQLException {
+    default void insert(Model model) {
     }
 
-    default List<Model> getAll() throws SQLException {
+    default List<Model> getAll() {
         return null;
     }
 
@@ -15,11 +15,11 @@ public interface Model {
         return null;
     }
 
-    default void update(Model model) throws SQLException {
+    default void update(Model model) {
 
     }
 
-    default void delete(int id) throws SQLException {
+    default void delete(int id) {
 
     }
 

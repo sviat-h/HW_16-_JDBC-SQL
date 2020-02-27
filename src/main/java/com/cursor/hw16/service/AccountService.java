@@ -13,7 +13,7 @@ public class AccountService extends DbUtil implements Model {
     private Connection connection = getConnection();
 
     @Override
-    public void insert(Model model) throws SQLException {
+    public void insert(Model model) {
         Account account = new Account();
 
         String sql = "INSERT INTO accounts (id, first_name, last_name, city, gender, username) VALUES (?, ?, ?, ?, ?, ?) ";
@@ -35,7 +35,7 @@ public class AccountService extends DbUtil implements Model {
     }
 
     @Override
-    public List<Model> getAll() throws SQLException {
+    public List<Model> getAll() {
 
         List<Model> modelList = new ArrayList<>();
 
@@ -97,7 +97,7 @@ public class AccountService extends DbUtil implements Model {
     }
 
     @Override
-    public void update(Model model) throws SQLException {
+    public void update(Model model) {
 
         Account account = new Account();
 
@@ -120,7 +120,7 @@ public class AccountService extends DbUtil implements Model {
     }
 
     @Override
-    public void delete(int id) throws SQLException {
+    public void delete(int id) {
 
         String sql = "DELETE FROM accounts WHERE id=?";
 
