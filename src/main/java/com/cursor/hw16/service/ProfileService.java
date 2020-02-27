@@ -22,7 +22,7 @@ public class ProfileService extends DbUtil implements Model {
 
             preparedStatement.setInt(1, profile.getId());
             preparedStatement.setString(2, profile.getUsername());
-            preparedStatement.setString(3, profile.getJob_title());
+            preparedStatement.setString(3, profile.getJobTitle());
             preparedStatement.setString(4, profile.getDepartment());
             preparedStatement.setString(5, profile.getCompany());
             preparedStatement.setString(6, profile.getSkill());
@@ -50,7 +50,7 @@ public class ProfileService extends DbUtil implements Model {
 
                 profile.setId(resultSet.getInt("id"));
                 profile.setUsername(resultSet.getString("username"));
-                profile.setJob_title(resultSet.getString("job_title"));
+                profile.setJobTitle(resultSet.getString("job_title"));
                 profile.setDepartment(resultSet.getString("department"));
                 profile.setCompany(resultSet.getString("company"));
                 profile.setSkill(resultSet.getString("skill"));
@@ -82,7 +82,7 @@ public class ProfileService extends DbUtil implements Model {
 
                 profile.setId(resultSet.getInt("id"));
                 profile.setUsername(resultSet.getString("username"));
-                profile.setJob_title(resultSet.getString("job_title"));
+                profile.setJobTitle(resultSet.getString("job_title"));
                 profile.setDepartment(resultSet.getString("department"));
                 profile.setCompany(resultSet.getString("company"));
                 profile.setSkill(resultSet.getString("skill"));
@@ -107,7 +107,7 @@ public class ProfileService extends DbUtil implements Model {
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, profile.getUsername());
-            preparedStatement.setString(2, profile.getJob_title());
+            preparedStatement.setString(2, profile.getJobTitle());
             preparedStatement.setString(3, profile.getDepartment());
             preparedStatement.setString(4, profile.getCompany());
             preparedStatement.setString(5, profile.getSkill());

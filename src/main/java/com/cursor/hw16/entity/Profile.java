@@ -14,7 +14,7 @@ public class Profile implements Model {
 
     private int id;
     private String username;
-    private String job_title;
+    private String jobTitle;
     private String department;
     private String company;
     private String skill;

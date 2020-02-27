@@ -21,8 +21,8 @@ public class AccountService extends DbUtil implements Model {
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setInt(1, account.getId());
-            preparedStatement.setString(2, account.getFirst_name());
-            preparedStatement.setString(3, account.getLast_name());
+            preparedStatement.setString(2, account.getFirstName());
+            preparedStatement.setString(3, account.getLastName());
             preparedStatement.setString(4, account.getCity());
             preparedStatement.setString(5, account.getGender());
             preparedStatement.setString(6, account.getUsername());
@@ -49,8 +49,8 @@ public class AccountService extends DbUtil implements Model {
                 Account account = new Account();
 
                 account.setId(resultSet.getInt("id"));
-                account.setFirst_name(resultSet.getString("first_name"));
-                account.setLast_name(resultSet.getString("last_name"));
+                account.setFirstName(resultSet.getString("first_name"));
+                account.setLastName(resultSet.getString("last_name"));
                 account.setCity(resultSet.getString("city"));
                 account.setGender(resultSet.getString("gender"));
                 account.setUsername(resultSet.getString("username"));
@@ -80,8 +80,8 @@ public class AccountService extends DbUtil implements Model {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 account.setId(resultSet.getInt("id"));
-                account.setFirst_name(resultSet.getString("first_name"));
-                account.setLast_name(resultSet.getString("last_name"));
+                account.setFirstName(resultSet.getString("first_name"));
+                account.setLastName(resultSet.getString("last_name"));
                 account.setCity(resultSet.getString("city"));
                 account.setGender(resultSet.getString("gender"));
                 account.setUsername(resultSet.getString("username"));
@@ -105,8 +105,8 @@ public class AccountService extends DbUtil implements Model {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
-            preparedStatement.setString(1, account.getFirst_name());
-            preparedStatement.setString(2, account.getLast_name());
+            preparedStatement.setString(1, account.getFirstName());
+            preparedStatement.setString(2, account.getLastName());
             preparedStatement.setString(3, account.getCity());
             preparedStatement.setString(4, account.getGender());
             preparedStatement.setString(5, account.getUsername());

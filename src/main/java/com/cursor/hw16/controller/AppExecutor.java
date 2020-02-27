@@ -40,8 +40,8 @@ public class AppExecutor {
     private void addAccountToTable(int id, String firstName, String lastName, String city, String gender, String username) throws SQLException {
 
         account.setId(id);
-        account.setFirst_name(firstName);
-        account.setLast_name(lastName);
+        account.setFirstName(firstName);
+        account.setLastName(lastName);
         account.setCity(city);
         account.setGender(gender);
         account.setUsername(username);
@@ -66,8 +66,8 @@ public class AppExecutor {
         Account account = new Account();
 
         account.setId(id);
-        account.setFirst_name(firstName);
-        account.setLast_name(lastName);
+        account.setFirstName(firstName);
+        account.setLastName(lastName);
         account.setCity(city);
         account.setGender(gender);
         account.setUsername(username);
@@ -84,7 +84,7 @@ public class AppExecutor {
 
         profile.setId(id);
         profile.setUsername(username);
-        profile.setJob_title(jobTitle);
+        profile.setJobTitle(jobTitle);
         profile.setDepartment(department);
         profile.setCompany(company);
         profile.setSkill(skill);
@@ -110,7 +110,7 @@ public class AppExecutor {
 
         profile.setId(id);
         profile.setUsername(username);
-        profile.setJob_title(jobTitle);
+        profile.setJobTitle(jobTitle);
         profile.setDepartment(department);
         profile.setCompany(company);
         profile.setSkill(skill);
