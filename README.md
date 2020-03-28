@@ -1,1 +1,1 @@
-# HW_16-_JDBC-SQL
+# JDBC-SQL
